@@ -1,0 +1,18 @@
+romd = window.romd || {cmd: []};
+(function (c, cb) {
+  var d = document, s = d.createElement('script'), x, t, q = [];
+  s.type = 'text/javascript';
+  s.async = 1;
+  s.src = 'https://cdn-plus.roxot-panel.com/wrapper/js/dynamic-engine.js?v=s-a44e0a27-71dc-4d0b-b8e1-57e081f0d9d1';
+  for (x in c) q.push(x + '=' + c[x].join(','));
+  s.src += q.join('&');
+  t = document.getElementsByTagName('head')[0];
+  t.insertBefore(s, t.firstChild);
+  if (cb) {
+    cb.call();
+  }
+})({}, function () {
+  romd.cmd.push(function () {
+    romd.display([{"selector":".roxot-dynamic.incontent-rectangle","rerunTimeLimit":500,"infinityScroll":true,"placementId":"82e40919-d091-4b73-adf7-7ab035a148f1"}]);
+  });
+});
